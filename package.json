@@ -10,7 +10,8 @@
     "chrome-aws-lambda": "7.0.0",
     "marked": "4.0.10",
     "puppeteer-core": "13.1.2",
-    "twemoji": "13.0.1"
+    "twemoji": "13.0.1",
+    "vercel": "^28.8.0"
   },
   "devDependencies": {
     "@types/marked": "4.0.1",
