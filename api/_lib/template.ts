@@ -71,6 +71,7 @@ function getCss(theme: string, fontSize: string) {
     }
 
     .logo {
+        margin-top: 400px;
         margin: 0 auto;
     }
 
@@ -86,17 +87,19 @@ function getCss(theme: string, fontSize: string) {
         font-size: ${sanitizeHtml(fontSize)};
         font-style: normal;
         color: ${foreground};
-        line-height: 1.8;
+        line-height: 1.2;
         font-weight: 900;
-        margin-left: 50px;
-        margin-top: -10px;
+        font-size: 150px;
+        margin-left: 80px;
     }
     
     .sub-heading {
         font-family: 'Inter', sans-serif;
         font-size: 90px;
-        font-style: normal;
+        font-weight: 400;
+        font-style: bold;
         margin-bottom: 0px;
+        font-size: 80px;
         color: ${foreground};
     }
     .current-link {
@@ -108,6 +111,14 @@ function getCss(theme: string, fontSize: string) {
         margin-left: 10px;
         color: ${foreground};
         opacity: 0.5;
+    }
+
+    .avatar {
+        height:220px;
+        border-radius: 100%;
+        margin-right: 50px;
+        margin-left: 80px;
+        margin-top:40px;
     }
     `;
 
@@ -123,8 +134,8 @@ export function getHtml(parsedReq: ParsedRequest) {
     <style>
         ${getCss(theme, fontSize)}
     </style>
-    <body style="display:flex; flex-direction: column; justify-content:space-between; margin-left:30px;">
-            <div style="display:flex; flex-grow: 1; width: 100%;">
+    <body style="display:flex; flex-direction: column;">
+            <div style="display:flex; flex:1; align-items:center; width: 100%;">
                 <div style="width: 50%;">
                     <h1 class="heading">
                     ${emojify(
@@ -132,7 +143,7 @@ export function getHtml(parsedReq: ParsedRequest) {
                     )}
                     </h1>
                 </div>
-                <div style="display:flex; width: 50%;align-items: center; justify-content: center;">
+                <div style="display:flex; width: 50%;">
                     ${images.map((img, i) =>
                         getImage(img, widths[i], heights[i])
                     ).join('')}
@@ -140,7 +151,7 @@ export function getHtml(parsedReq: ParsedRequest) {
             </div>
             <div style="display: flex;align-items: center;">
                 <div>
-                    <img style="height:150px;border-radius: 100%;margin-right: 50px;margin-left: 50px; margin-top:40px;" src="https://avatars.githubusercontent.com/u/4820517?v=4" alt="heyjordn">            
+                    <img class="avatar" src="https://avatars.githubusercontent.com/u/4820517?v=4" alt="heyjordn">            
                 </div>
                 <div>
                     <p class="sub-heading">Jordan Jones</p>
@@ -151,7 +162,7 @@ export function getHtml(parsedReq: ParsedRequest) {
 </html>`;
 }
 
-function getImage(src: string, width ='auto', height = '600') {
+function getImage(src: string, width ='auto', height = '500') {
     return `<img
         class="logo"
         alt="Generated Image"
