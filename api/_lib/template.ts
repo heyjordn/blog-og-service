@@ -149,7 +149,7 @@ export function getHtml(parsedReq: ParsedRequest) {
                     ).join('')}
                 </div>
             </div>
-            <div style="display: flex;align-items: center;">
+            <div style="display: flex;align-items: center;padding-bottom: 50px;">
                 <div>
                     <img class="avatar" src="https://avatars.githubusercontent.com/u/4820517?v=4" alt="heyjordn">            
                 </div>
