@@ -79,15 +79,18 @@ function getCss(theme: string, fontSize: string) {
     }
     
     .heading {
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
         font-style: normal;
         color: ${foreground};
-        line-height: 1.8;
+        line-height: 1;
+        font-weight: 900;
+        margin-left: 50px;
+        margin-top: -10px;
     }
     
     .sub-heading {
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-size: 90px;
         font-style: normal;
         margin-bottom: 0px;
@@ -96,11 +99,12 @@ function getCss(theme: string, fontSize: string) {
     .current-link {
         font-family: 'Open Sans', sans-serif;
         font-size: 50px;
-        font-style: bold;
-        font-weight: 900;
+        font-style: light;
+        font-weight: 100;
         margin-top: 0px;
         margin-left: 10px;
         color: ${foreground};
+        opacity: 0.5;
     }
     `;
 
@@ -116,7 +120,7 @@ export function getHtml(parsedReq: ParsedRequest) {
     <style>
         ${getCss(theme, fontSize)}
     </style>
-    <body style="display:flex; flex-direction: column; justify-content:space-between; padding: 150px;">
+    <body style="display:flex; flex-direction: column; justify-content:space-between; margin-left:30px;">
             <div style="display:flex; flex-grow: 1; width: 100%;">
                 <div style="width: 50%;">
                     <h1 class="heading">
@@ -133,7 +137,7 @@ export function getHtml(parsedReq: ParsedRequest) {
             </div>
             <div style="display: flex;align-items: center;">
                 <div>
-                    <img style="height:230px;border-radius: 100%;margin-right: 50px;" src="https://avatars.githubusercontent.com/u/4820517?v=4" alt="heyjordn">            
+                    <img style="height:150px;border-radius: 100%;margin-right: 50px;margin-left: 50px;" src="https://avatars.githubusercontent.com/u/4820517?v=4" alt="heyjordn">            
                 </div>
                 <div>
                     <p class="sub-heading">Jordan Jones</p>
